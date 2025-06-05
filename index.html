@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dash ❤️</title>
+  <title>Dash 💖</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #fbd3e9, #bb377d);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      color: white;
+    }
+    h1 {
+      font-size: 3em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    button {
+      padding: 12px 24px;
+      background-color: white;
+      color: #bb377d;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #ffe6f0;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 20px #ff99cc; }
+    }
+  </style>
 </head>
-<body style="text-align: center; margin-top: 100px;">
-  <h1>Dash, please maan jao 🥺</h1>
-  <p>Maine GitHub pe poori website banayi sirf tumhare liye 💖</p>
+<body>
+
+  <h1>Dash, please maan jao 😔💖</h1>
+  <p>Maine tumhare liye GitHub pe poori website banayi 😳</p>
+
+  <button onclick="showLove()">Click karo na 💌</button>
+
+  <p id="loveMessage" style="margin-top:30px; display:none;">I still love you Dash, always 💘</p>
+
+  <script>
+    function showLove() {
+      document.getElementById("loveMessage").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
