@@ -1,52 +1,249 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dash 💖</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #fbd3e9, #bb377d);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-      color: white;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eid Mubarak Ilma</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  body {
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 0 0 10px #ffd700;
+  }
+
+  #heartBtn {
+    width: 120px;
+    height: 120px;
+    background: #ff4d6d;
+    clip-path: polygon(
+      50% 0%, 61% 15%, 75% 15%, 85% 25%, 90% 40%, 
+      90% 60%, 75% 80%, 50% 100%, 25% 80%, 10% 60%, 
+      10% 40%, 15% 25%, 25% 15%, 39% 15%
+    );
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff4d6d;
+    transition: transform 0.3s ease;
+    margin-bottom: 40px;
+  }
+  #heartBtn:hover {
+    transform: scale(1.1);
+  }
+
+  #eidMsg {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 400px;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 6px #ffd700;
+  }
+
+  #questionBox {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px 20px;
+    border-radius: 15px;
+    max-width: 420px;
+    font-size: 1.3rem;
+    box-shadow: 0 0 15px #ff4d6d;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    user-select: none;
+  }
+
+  #nextBtn {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #ffd700;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #1e3c72;
+    box-shadow: 0 0 10px #ffd700;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  #nextBtn:hover {
+    background: #ffbf00;
+  }
+
+  /* Chat container */
+  #chatContainer {
+    max-width: 400px;
+    width: 90vw;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 15px 20px;
+    box-shadow: 0 0 15px #ff4d6d;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  /* Chat bubbles */
+  .chat {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 1rem;
+    line-height: 1.4;
+    animation: fadeInUp 0.7s ease forwards;
+    opacity: 0;
+  }
+  .chat.ilma {
+    background: #ff4d6d;
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+  }
+  .chat.affan {
+    background: #ffd700;
+    color: #1e3c72;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+  }
+
+  /* Chat fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-    h1 {
-      font-size: 3em;
-      animation: glow 2s ease-in-out infinite alternate;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-    button {
-      padding: 12px 24px;
-      background-color: white;
-      color: #bb377d;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #ffe6f0;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #fff; }
-      to { text-shadow: 0 0 20px #ff99cc; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <h1>Dash, please maan jao 😔💖</h1>
-  <p>Maine tumhare liye GitHub pe poori website banayi 😳</p>
+  <h1>Assalamualaikum Ilma 🌙</h1>
 
-  <button onclick="showLove()">Click karo na 💌</button>
+  <div id="heartBtn" title="Click to wish Eid Mubarak"></div>
 
-  <p id="loveMessage" style="margin-top:30px; display:none;">I still love you Dash, always 💘</p>
+  <div id="eidMsg">
+    Eid ul-Adha Mubarak Ilma 🌙✨<br><br>
+    Aaj ka din sirf sacrifice ka nahi, remembrance and reflection ka bhi hota hai.<br>
+    Kehte hain kuch log sirf yaadon mein nahi, duaon mein bhi zinda rehte hain, tum unhi mein ho.<br>
+    May your life be filled with peace, light and purpose.<br>
+    Har mod par khuda ka noor saath ho.<br><br>
+    I won’t say much, just wanted to wish you a beautiful Eid.<br>
+    Take care… always 🕊️
+  </div>
 
-  <script>
-    function showLove() {
-      document.getElementById("loveMessage").style.display = "block";
+  <div id="questionBox"></div>
+  <button id="nextBtn">Next</button>
+
+  <div id="chatContainer">
+    <!-- Chats will be appended here -->
+  </div>
+
+<script>
+  const heartBtn = document.getElementById('heartBtn');
+  const eidMsg = document.getElementById('eidMsg');
+  const questionBox = document.getElementById('questionBox');
+  const nextBtn = document.getElementById('nextBtn');
+  const chatContainer = document.getElementById('chatContainer');
+
+  // Questions array
+  const questions = [
+    "Kya tum theek ho?",
+    "Ghar mein ammi papa theek hain?",
+    "Arsh ab bhi tumhari jasosi to nahi karta?"
+  ];
+
+  // Chat conversation data (simulating WhatsApp style)
+  const chats = [
+    { sender: 'ilma', text: 'hurr' },
+    { sender: 'affan', text: 'httt' },
+    { sender: 'ilma', text: 'dhttt' },
+    { sender: 'affan', text: 'bhkkk' },
+    { sender: 'affan', text: 'Sach me jao' },
+    { sender: 'ilma', text: 'nhi' }
+  ];
+
+  let step = 0;
+  let chatStep = 0;
+
+  // Initial state - hide eidMsg, questionBox, nextBtn, chatContainer
+  eidMsg.style.opacity = 0;
+  questionBox.style.opacity = 0;
+  nextBtn.style.opacity = 0;
+
+  // On heart click
+  heartBtn.addEventListener('click', () => {
+    heartBtn.style.display = 'none';  // hide heart
+
+    // Show eid message with fade-in
+    eidMsg.style.opacity = 1;
+
+    // After 4 seconds show question box & next button
+    setTimeout(() => {
+      questionBox.style.opacity = 1;
+      nextBtn.style.opacity = 1;
+      questionBox.textContent = questions[step];
+      step++;
+    }, 4000);
+  });
+
+  // On next button click
+  nextBtn.addEventListener('click', () => {
+    if (step < questions.length) {
+      questionBox.textContent = questions[step];
+      step++;
+    } else if (step === questions.length) {
+      // Hide questions, show chat container
+      questionBox.style.opacity = 0;
+      nextBtn.style.opacity = 0;
+
+      chatContainer.style.display = 'flex';
+      showChats();
+      step++;
     }
-  </script>
+  });
+
+  function showChats() {
+    if (chatStep < chats.length) {
+      const chat = document.createElement('div');
+      chat.classList.add('chat');
+      chat.classList.add(chats[chatStep].sender);
+      chat.textContent = chats[chatStep].text;
+      chat.style.animationDelay = `${chatStep * 0.7}s`;
+      chat.style.opacity = 0;
+      chatContainer.appendChild(chat);
+
+      chatStep++;
+      setTimeout(showChats, 800);
+    }
+  }
+</script>
 
 </body>
 </html>
