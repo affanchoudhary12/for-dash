@@ -2,205 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eid Mubarak for Ilma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilma Eid Website</title>
   <style>
     body {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      color: #222;
-      display: flex; justify-content: center; align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #fff);
+      color: #333;
     }
     .page {
-      width: 100vw;
-      height: 100vh;
-      padding: 20px;
-      box-sizing: border-box;
       display: none;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      padding: 20px;
     }
     .page.active {
       display: flex;
     }
+    h1, h2 {
+      color: #ff4d88;
+      animation: fadeIn 1s ease-in-out;
+    }
     button {
-      padding: 12px 25px;
-      border: none;
-      background: #ff6f61;
-      color: white;
-      font-size: 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s ease;
       margin-top: 30px;
-    }
-    button:hover {
-      background: #ff3b2e;
-    }
-    .chat-bubble {
-      max-width: 70%;
-      padding: 15px 20px;
-      border-radius: 25px;
-      margin: 10px 0;
-      font-size: 18px;
-      line-height: 1.4;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    .bubble-ilma {
-      background: #fff;
-      align-self: flex-start;
-      color: #333;
-      border-top-left-radius: 0;
-    }
-    .bubble-affan {
-      background: #ff6f61;
-      align-self: flex-end;
+      background: #ff6699;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 25px;
+      font-size: 1rem;
       color: #fff;
-      border-top-right-radius: 0;
+      cursor: pointer;
+      animation: pulse 2s infinite;
     }
-    #countdown {
-      font-size: 40px;
-      font-weight: bold;
+    .chat-box, .message, .questions {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin-top: 20px;
-      color: #d94f44;
-      letter-spacing: 2px;
     }
-    /* Simple fade in animation */
-    .fade-in {
-      animation: fadeIn 1s ease forwards;
-      opacity: 0;
+    .chat-msg { margin: 10px 0; }
+    .ilma { text-align: left; color: #d63384; }
+    .affan { text-align: right; color: #1e90ff; }
+    .hug, .game, .reflection, .music, .poem, .rain, .final-note {
+      padding: 20px;
+      background-color: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 700px;
     }
-    @keyframes fadeIn {
-      to {opacity: 1;}
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Page 1: Welcome -->
-  <div id="page1" class="page active fade-in">
-    <h1>Hello Ilma! ❤️</h1>
-    <p>Welcome to a special Eid surprise just for you.</p>
-    <button onclick="nextPage(2)">Let's Celebrate Eid!</button>
+  <div class="page active" id="page1">
+    <h1>🌸 Assalamualaikum Ilma Multani 🌸</h1>
+    <button onclick="goToPage(2)">❤️ Mujhe Click Karo, Aage Maza Ayega ❤️</button>
   </div>
 
-  <!-- Page 2: Eid Mubarak Message + Countdown -->
-  <div id="page2" class="page">
-    <h1>Eid Mubarak, Ilma! 🌙✨</h1>
-    <p>May this Eid bring joy, love, and countless blessings to your life.</p>
-    <div id="countdown"></div>
-    <button onclick="nextPage(3)">Next</button>
+  <div class="page" id="page2">
+    <div class="message">
+      <h2>Eid ul-Adha Mubarak Ilma 🌙✨</h2>
+      <p>Aaj ka din sirf sacrifice ka nahi, remembrance and reflection ka bhi hota hai.<br>
+      Kehte hain kuch log sirf yaadon mein nahi, duaon mein bhi zinda rehte hain — tum unhi mein ho.<br><br>
+      May your life be filled with peace, light and purpose. Har mod par Khuda ka noor saath ho.<br><br>
+      I won’t say much, just wanted to wish you a beautiful Eid.<br>
+      Take care… always 🕊️</p>
+    </div>
+    <button onclick="goToPage(3)">➡️ Aage Badhte Hain</button>
   </div>
 
-  <!-- Pages 3 to 8: Chat-style conversation -->
-  <div id="page3" class="page">
-    <div class="chat-bubble bubble-ilma">Hey Affan! Eid mubarak! How are you feeling today?</div>
-    <button onclick="nextPage(4)">Next</button>
+  <div class="page" id="page3">
+    <h2>💬 Hamari Choti Si Funny Talk</h2>
+    <div class="chat-box">
+      <div class="chat-msg ilma">ilma: hurr</div>
+      <div class="chat-msg ilma">affan: furr</div>
+      <div class="chat-msg affan">ilma: dhttt</div>
+      <div class="chat-msg ilma">affan: bhkkk</div>
+      <div class="chat-msg affan">ilma: sach me 😂</div>
+      <div class="chat-msg ilma">affan: nhi</div>
+      <div class="chat-msg affan">ilma: 😅</div>
+    </div>
+    <button onclick="goToPage(4)">❤️ Agla Page Dekho</button>
   </div>
 
-  <div id="page4" class="page">
-    <div class="chat-bubble bubble-affan">Eid Mubarak Ilma! Feeling great, especially now that I'm chatting with you 😊</div>
-    <button onclick="nextPage(5)">Next</button>
+  <div class="page" id="page4">
+    <div class="hug">
+      <h2>🤗 A Big Virtual Hug</h2>
+      <p>Kabhi kabhi ek hug se sab kuch theek lagta hai. Agar paas hota, to zaroor gale lagta…</p>
+      <p>Lekin filhaal, yeh virtual hug tumhare liye 💞</p>
+    </div>
+    <button onclick="goToPage(5)">➡️ Agla Surprise</button>
   </div>
 
-  <div id="page5" class="page">
-    <div class="chat-bubble bubble-ilma">Haha, you're so sweet! Got any special plans for Eid?</div>
-    <button onclick="nextPage(6)">Next</button>
+  <div class="page" id="page5">
+    <div class="game">
+      <h2>🎮 Ek Choti Si Game</h2>
+      <p>Game ka naam: “Dil Ilma ke Naam”</p>
+      <p>Mission: Mujhe wapas impress karo! 😄</p>
+      <p>(Ye game interactive hone wala hai next phase mein)</p>
+    </div>
+    <button onclick="goToPage(6)">Next ➡️</button>
   </div>
 
-  <div id="page6" class="page">
-    <div class="chat-bubble bubble-affan">Just thinking of making this Eid memorable with you. Maybe we can meet soon?</div>
-    <button onclick="nextPage(7)">Next</button>
+  <div class="page" id="page6">
+    <div class="reflection">
+      <h2>🪞 Mirror Talk</h2>
+      <p>Ilma, jab bhi tum khud se baat karo, ek baar keh dena: “Main bohot special hoon.”</p>
+      <p>Tumhare hone se hi duniya sundar lagti hai 💗</p>
+    </div>
+    <button onclick="goToPage(7)">Aage ➡️</button>
   </div>
 
-  <div id="page7" class="page">
-    <div class="chat-bubble bubble-ilma">That sounds amazing. I can't wait! Eid will be extra special then.</div>
-    <button onclick="nextPage(8)">Next</button>
+  <div class="page" id="page7">
+    <div class="music">
+      <h2>🎵 Music Vibes</h2>
+      <p>“Tera Mera Rishta Purana…”</p>
+      <p>(Socho agar yeh background mein baj raha hota, aur hum dono terrace pe patang uda rahe hote ☁️)</p>
+    </div>
+    <button onclick="goToPage(8)">➡️ Next</button>
   </div>
 
-  <div id="page8" class="page">
-    <div class="chat-bubble bubble-affan">Counting days till then. Eid Mubarak again, Ilma! ❤️</div>
-    <button onclick="nextPage(9)">Next</button>
+  <div class="page" id="page8">
+    <div class="poem">
+      <h2>📝 Tere Naam Ek Shayari</h2>
+      <p>Tum door ho to kya hua,<br>
+      Duaon mein to har waqt paas ho…<br>
+      Har lamha yaad mein basi ho,<br>
+      Khayalon mein tum hi khaas ho 💫</p>
+    </div>
+    <button onclick="goToPage(9)">➡️ Last Few</button>
   </div>
 
-  <!-- Page 9: Simple game or fun -->
-  <div id="page9" class="page">
-    <h2>Let's play a quick game! 🎮</h2>
-    <p>Click the button to get a surprise message.</p>
-    <button onclick="showSurprise()">Click me!</button>
-    <p id="surpriseMessage" style="margin-top:20px; font-size: 20px; color:#333;"></p>
-    <button style="margin-top: 40px;" onclick="nextPage(10)">Next</button>
+  <div class="page" id="page9">
+    <div class="rain">
+      <h2>🌧️ Barish Wali Yaadein</h2>
+      <p>Yaad hai jab barish ho rahi thi aur tum terrace pe thi?</p>
+      <p>Wo bhi ek scene hi tha… jaise koi movie, jisme heroine bas tum thi ☔</p>
+    </div>
+    <button onclick="goToPage(10)">➡️ Second Last</button>
   </div>
 
-  <!-- Page 10: Final message -->
-  <div id="page10" class="page">
-    <h1>Thank you for being amazing, Ilma! 🌟</h1>
-    <p>Wishing you happiness, love, and success always.</p>
-    <p>Looking forward to many more moments together. Eid Mubarak! ❤️</p>
+  <div class="page" id="page10">
+    <div class="final-note">
+      <h2>🕯️ Khamoshi Mein Bhi Pyaar Hai</h2>
+      <p>Kuch cheezein kehne se nahi, mehsoos karne se samajh aati hain.</p>
+      <p>Har lamha, har yaad, tumse judi hai…</p>
+    </div>
+    <button onclick="goToPage(11)">💭 Final Page</button>
   </div>
 
-<script>
-  function nextPage(pageNum) {
-    // Hide all pages
-    for(let i=1; i<=10; i++) {
-      document.getElementById('page'+i).classList.remove('active');
+  <div class="page" id="page11">
+    <h2>🫶 Before You Go…</h2>
+    <div class="questions">
+      <p>1. Kiya tum theek ho Ilma?</p>
+      <p>2. Ghar me Ammi Papa theek hain?</p>
+      <p>3. Kiya Arsh tumhari ab bhi jasosi to nhi karta? 😄</p>
+    </div>
+  </div>
+
+  <script>
+    function goToPage(pageNum) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.getElementById(`page${pageNum}`).classList.add('active');
     }
-    // Show current page
-    let currentPage = document.getElementById('page'+pageNum);
-    currentPage.classList.add('active');
-    currentPage.classList.add('fade-in');
-  }
-
-  // Countdown timer to a date (example: Eid day)
-  function startCountdown() {
-    // Set your Eid date here (year, month-1, day, hour, min, sec)
-    let eidDate = new Date(2025, 5, 18, 0, 0, 0); // June 18, 2025 midnight
-
-    let countdownElem = document.getElementById('countdown');
-
-    function updateCountdown() {
-      let now = new Date();
-      let diff = eidDate - now;
-
-      if(diff <= 0) {
-        countdownElem.innerHTML = "Eid is here! 🎉";
-        clearInterval(timerInterval);
-        return;
-      }
-
-      let days = Math.floor(diff / (1000*60*60*24));
-      let hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-      let minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-      let seconds = Math.floor((diff % (1000*60)) / 1000);
-
-      countdownElem.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-    }
-
-    updateCountdown();
-    let timerInterval = setInterval(updateCountdown, 1000);
-  }
-
-  startCountdown();
-
-  // Surprise message for game
-  function showSurprise() {
-    let messages = [
-      "You make every moment brighter! ✨",
-      "Can't wait to see you again! ❤️",
-      "You're truly special, Ilma. 🌸",
-      "Sending you endless smiles! 😊",
-      "Together, we shine brighter! 🌟"
-    ];
-    let randomIndex = Math.floor(Math.random() * messages.length);
-    document.getElementById('surpriseMessage').textContent = messages[randomIndex];
-  }
-</script>
-
+  </script>
 </body>
 </html>
