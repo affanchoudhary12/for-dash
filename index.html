@@ -1,247 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Eid Mubarak Ilma</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-  body {
-    margin: 0; padding: 0;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  h1 {
-    font-weight: 600;
-    font-size: 3rem;
-    margin-bottom: 40px;
-    text-align: center;
-    text-shadow: 0 0 10px #ffd700;
-  }
-
-  #heartBtn {
-    width: 120px;
-    height: 120px;
-    background: #ff4d6d;
-    clip-path: polygon(
-      50% 0%, 61% 15%, 75% 15%, 85% 25%, 90% 40%, 
-      90% 60%, 75% 80%, 50% 100%, 25% 80%, 10% 60%, 
-      10% 40%, 15% 25%, 25% 15%, 39% 15%
-    );
-    cursor: pointer;
-    box-shadow: 0 0 20px #ff4d6d;
-    transition: transform 0.3s ease;
-    margin-bottom: 40px;
-  }
-  #heartBtn:hover {
-    transform: scale(1.1);
-  }
-
-  #eidMsg {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    max-width: 400px;
-    opacity: 0;
-    transition: opacity 1.5s ease;
-    text-align: center;
-    margin-bottom: 40px;
-    text-shadow: 0 0 6px #ffd700;
-  }
-
-  #questionBox {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 25px 20px;
-    border-radius: 15px;
-    max-width: 420px;
-    font-size: 1.3rem;
-    box-shadow: 0 0 15px #ff4d6d;
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 1s ease;
-    user-select: none;
-  }
-
-  #nextBtn {
-    margin-top: 25px;
-    padding: 12px 28px;
-    background: #ffd700;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    color: #1e3c72;
-    box-shadow: 0 0 10px #ffd700;
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
-  #nextBtn:hover {
-    background: #ffbf00;
-  }
-
-  /* Chat container */
-  #chatContainer {
-    max-width: 400px;
-    width: 90vw;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 15px 20px;
-    box-shadow: 0 0 15px #ff4d6d;
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    max-height: 320px;
-    overflow-y: auto;
-  }
-
-  /* Chat bubbles */
-  .chat {
-    max-width: 70%;
-    padding: 12px 18px;
-    border-radius: 18px;
-    font-size: 1rem;
-    line-height: 1.4;
-    animation: fadeInUp 0.7s ease forwards;
-    opacity: 0;
-  }
-  .chat.ilma {
-    background: #ff4d6d;
-    color: white;
-    align-self: flex-start;
-    border-bottom-left-radius: 0;
-  }
-  .chat.affan {
-    background: #ffd700;
-    color: #1e3c72;
-    align-self: flex-end;
-    border-bottom-right-radius: 0;
-  }
-
-  /* Chat fade-in animation */
-  @keyframes fadeInUp {
-    from {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eid Mubarak for Ilma</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex; justify-content: center; align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .page {
+      width: 100vw;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+    .page.active {
+      display: flex;
+    }
+    button {
+      padding: 12px 25px;
+      border: none;
+      background: #ff6f61;
+      color: white;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 30px;
+    }
+    button:hover {
+      background: #ff3b2e;
+    }
+    .chat-bubble {
+      max-width: 70%;
+      padding: 15px 20px;
+      border-radius: 25px;
+      margin: 10px 0;
+      font-size: 18px;
+      line-height: 1.4;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .bubble-ilma {
+      background: #fff;
+      align-self: flex-start;
+      color: #333;
+      border-top-left-radius: 0;
+    }
+    .bubble-affan {
+      background: #ff6f61;
+      align-self: flex-end;
+      color: #fff;
+      border-top-right-radius: 0;
+    }
+    #countdown {
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #d94f44;
+      letter-spacing: 2px;
+    }
+    /* Simple fade in animation */
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
       opacity: 0;
-      transform: translateY(20px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeIn {
+      to {opacity: 1;}
     }
-  }
-</style>
+  </style>
 </head>
 <body>
 
-  <h1>Assalamualaikum Ilma 🌙</h1>
-
-  <div id="heartBtn" title="Click to wish Eid Mubarak"></div>
-
-  <div id="eidMsg">
-    Eid ul-Adha Mubarak Ilma 🌙✨<br><br>
-    Aaj ka din sirf sacrifice ka nahi, remembrance and reflection ka bhi hota hai.<br>
-    Kehte hain kuch log sirf yaadon mein nahi, duaon mein bhi zinda rehte hain, tum unhi mein ho.<br>
-    May your life be filled with peace, light and purpose.<br>
-    Har mod par khuda ka noor saath ho.<br><br>
-    I won’t say much, just wanted to wish you a beautiful Eid.<br>
-    Take care… always 🕊️
+  <!-- Page 1: Welcome -->
+  <div id="page1" class="page active fade-in">
+    <h1>Hello Ilma! ❤️</h1>
+    <p>Welcome to a special Eid surprise just for you.</p>
+    <button onclick="nextPage(2)">Let's Celebrate Eid!</button>
   </div>
 
-  <div id="questionBox"></div>
-  <button id="nextBtn">Next</button>
+  <!-- Page 2: Eid Mubarak Message + Countdown -->
+  <div id="page2" class="page">
+    <h1>Eid Mubarak, Ilma! 🌙✨</h1>
+    <p>May this Eid bring joy, love, and countless blessings to your life.</p>
+    <div id="countdown"></div>
+    <button onclick="nextPage(3)">Next</button>
+  </div>
 
-  <div id="chatContainer">
-    <!-- Chats will be appended here -->
+  <!-- Pages 3 to 8: Chat-style conversation -->
+  <div id="page3" class="page">
+    <div class="chat-bubble bubble-ilma">Hey Affan! Eid mubarak! How are you feeling today?</div>
+    <button onclick="nextPage(4)">Next</button>
+  </div>
+
+  <div id="page4" class="page">
+    <div class="chat-bubble bubble-affan">Eid Mubarak Ilma! Feeling great, especially now that I'm chatting with you 😊</div>
+    <button onclick="nextPage(5)">Next</button>
+  </div>
+
+  <div id="page5" class="page">
+    <div class="chat-bubble bubble-ilma">Haha, you're so sweet! Got any special plans for Eid?</div>
+    <button onclick="nextPage(6)">Next</button>
+  </div>
+
+  <div id="page6" class="page">
+    <div class="chat-bubble bubble-affan">Just thinking of making this Eid memorable with you. Maybe we can meet soon?</div>
+    <button onclick="nextPage(7)">Next</button>
+  </div>
+
+  <div id="page7" class="page">
+    <div class="chat-bubble bubble-ilma">That sounds amazing. I can't wait! Eid will be extra special then.</div>
+    <button onclick="nextPage(8)">Next</button>
+  </div>
+
+  <div id="page8" class="page">
+    <div class="chat-bubble bubble-affan">Counting days till then. Eid Mubarak again, Ilma! ❤️</div>
+    <button onclick="nextPage(9)">Next</button>
+  </div>
+
+  <!-- Page 9: Simple game or fun -->
+  <div id="page9" class="page">
+    <h2>Let's play a quick game! 🎮</h2>
+    <p>Click the button to get a surprise message.</p>
+    <button onclick="showSurprise()">Click me!</button>
+    <p id="surpriseMessage" style="margin-top:20px; font-size: 20px; color:#333;"></p>
+    <button style="margin-top: 40px;" onclick="nextPage(10)">Next</button>
+  </div>
+
+  <!-- Page 10: Final message -->
+  <div id="page10" class="page">
+    <h1>Thank you for being amazing, Ilma! 🌟</h1>
+    <p>Wishing you happiness, love, and success always.</p>
+    <p>Looking forward to many more moments together. Eid Mubarak! ❤️</p>
   </div>
 
 <script>
-  const heartBtn = document.getElementById('heartBtn');
-  const eidMsg = document.getElementById('eidMsg');
-  const questionBox = document.getElementById('questionBox');
-  const nextBtn = document.getElementById('nextBtn');
-  const chatContainer = document.getElementById('chatContainer');
-
-  // Questions array
-  const questions = [
-    "Kya tum theek ho?",
-    "Ghar mein ammi papa theek hain?",
-    "Arsh ab bhi tumhari jasosi to nahi karta?"
-  ];
-
-  // Chat conversation data (simulating WhatsApp style)
-  const chats = [
-    { sender: 'ilma', text: 'hurr' },
-    { sender: 'affan', text: 'httt' },
-    { sender: 'ilma', text: 'dhttt' },
-    { sender: 'affan', text: 'bhkkk' },
-    { sender: 'affan', text: 'Sach me jao' },
-    { sender: 'ilma', text: 'nhi' }
-  ];
-
-  let step = 0;
-  let chatStep = 0;
-
-  // Initial state - hide eidMsg, questionBox, nextBtn, chatContainer
-  eidMsg.style.opacity = 0;
-  questionBox.style.opacity = 0;
-  nextBtn.style.opacity = 0;
-
-  // On heart click
-  heartBtn.addEventListener('click', () => {
-    heartBtn.style.display = 'none';  // hide heart
-
-    // Show eid message with fade-in
-    eidMsg.style.opacity = 1;
-
-    // After 4 seconds show question box & next button
-    setTimeout(() => {
-      questionBox.style.opacity = 1;
-      nextBtn.style.opacity = 1;
-      questionBox.textContent = questions[step];
-      step++;
-    }, 4000);
-  });
-
-  // On next button click
-  nextBtn.addEventListener('click', () => {
-    if (step < questions.length) {
-      questionBox.textContent = questions[step];
-      step++;
-    } else if (step === questions.length) {
-      // Hide questions, show chat container
-      questionBox.style.opacity = 0;
-      nextBtn.style.opacity = 0;
-
-      chatContainer.style.display = 'flex';
-      showChats();
-      step++;
+  function nextPage(pageNum) {
+    // Hide all pages
+    for(let i=1; i<=10; i++) {
+      document.getElementById('page'+i).classList.remove('active');
     }
-  });
+    // Show current page
+    let currentPage = document.getElementById('page'+pageNum);
+    currentPage.classList.add('active');
+    currentPage.classList.add('fade-in');
+  }
 
-  function showChats() {
-    if (chatStep < chats.length) {
-      const chat = document.createElement('div');
-      chat.classList.add('chat');
-      chat.classList.add(chats[chatStep].sender);
-      chat.textContent = chats[chatStep].text;
-      chat.style.animationDelay = `${chatStep * 0.7}s`;
-      chat.style.opacity = 0;
-      chatContainer.appendChild(chat);
+  // Countdown timer to a date (example: Eid day)
+  function startCountdown() {
+    // Set your Eid date here (year, month-1, day, hour, min, sec)
+    let eidDate = new Date(2025, 5, 18, 0, 0, 0); // June 18, 2025 midnight
 
-      chatStep++;
-      setTimeout(showChats, 800);
+    let countdownElem = document.getElementById('countdown');
+
+    function updateCountdown() {
+      let now = new Date();
+      let diff = eidDate - now;
+
+      if(diff <= 0) {
+        countdownElem.innerHTML = "Eid is here! 🎉";
+        clearInterval(timerInterval);
+        return;
+      }
+
+      let days = Math.floor(diff / (1000*60*60*24));
+      let hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      let minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      let seconds = Math.floor((diff % (1000*60)) / 1000);
+
+      countdownElem.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
     }
+
+    updateCountdown();
+    let timerInterval = setInterval(updateCountdown, 1000);
+  }
+
+  startCountdown();
+
+  // Surprise message for game
+  function showSurprise() {
+    let messages = [
+      "You make every moment brighter! ✨",
+      "Can't wait to see you again! ❤️",
+      "You're truly special, Ilma. 🌸",
+      "Sending you endless smiles! 😊",
+      "Together, we shine brighter! 🌟"
+    ];
+    let randomIndex = Math.floor(Math.random() * messages.length);
+    document.getElementById('surpriseMessage').textContent = messages[randomIndex];
   }
 </script>
 
