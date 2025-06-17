@@ -1,182 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ilma Eid Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ffe6f0, #fff);
-      color: #333;
-    }
-    .page {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
-    .page.active {
-      display: flex;
-    }
-    h1, h2 {
-      color: #ff4d88;
-      animation: fadeIn 1s ease-in-out;
-    }
-    button {
-      margin-top: 30px;
-      background: #ff6699;
-      border: none;
-      border-radius: 30px;
-      padding: 15px 25px;
-      font-size: 1rem;
-      color: #fff;
-      cursor: pointer;
-      animation: pulse 2s infinite;
-    }
-    .chat-box, .message, .questions {
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-top: 20px;
-    }
-    .chat-msg { margin: 10px 0; }
-    .ilma { text-align: left; color: #d63384; }
-    .affan { text-align: right; color: #1e90ff; }
-    .hug, .game, .reflection, .music, .poem, .rain, .final-note {
-      padding: 20px;
-      background-color: #fff0f5;
-      border-radius: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 700px;
-    }
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fun Affidavit - Father and Son</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #7c3aed, #38bdf8);
+    color: white;
+    margin: 0; padding: 32px;
+    display: flex; justify-content: center; align-items: center; min-height: 100vh;
+  }
+  .affidavit {
+    background: rgba(0,0,0,0.65);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 600px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  }
+  h1 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #c084fc, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 12px 0;
+  }
+  .signature {
+    margin-top: 48px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .sig-box {
+    border-top: 2px solid #c084fc;
+    padding-top: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 45%;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+</style>
 </head>
 <body>
-
-  <div class="page active" id="page1">
-    <h1>🌸 Assalamualaikum Ilma Multani 🌸</h1>
-    <button onclick="goToPage(2)">❤️ Mujhe Click Karo, Aage Maza Ayega ❤️</button>
-  </div>
-
-  <div class="page" id="page2">
-    <div class="message">
-      <h2>Eid ul-Adha Mubarak Ilma 🌙✨</h2>
-      <p>Aaj ka din sirf sacrifice ka nahi, remembrance and reflection ka bhi hota hai.<br>
-      Kehte hain kuch log sirf yaadon mein nahi, duaon mein bhi zinda rehte hain — tum unhi mein ho.<br><br>
-      May your life be filled with peace, light and purpose. Har mod par Khuda ka noor saath ho.<br><br>
-      I won’t say much, just wanted to wish you a beautiful Eid.<br>
-      Take care… always 🕊️</p>
+  <article class="affidavit" role="document" aria-label="Fun Affidavit document for Affan and Umar">
+    <h1>AFFIDAVIT OF PATERNITY</h1>
+    <p>
+      I, <strong>Affan</strong>, son of <strong>Apman</strong>, aged 35 years, residing at my cozy home in India, do solemnly affirm and declare the following:
+    </p>
+    <p>
+      1. That I am the proud and loving father of <strong>Umar</strong>, who is my son by birth and a true champ at the age of 10 years.
+    </p>
+    <p>
+      2. That this affidavit confirms beyond any doubt or Google search that <em>Affan = Umar's Papa</em>.
+    </p>
+    <p>
+      3. This document is made to satisfy all legal, official, or just-for-fun purposes to prove my eternal dad-ness.
+    </p>
+    <p>
+      4. That I swear on my last plate of biryani that these declarations are true, and no biryani was harmed while making it.
+    </p>
+    <p>
+      5. May this affidavit be accepted by any and every ministry, chacha, uncle, or auntie who questions our bond.
+    </p>
+    <p>
+      Signed, sealed, and delivered with a smile and a promise to always share the TV remote.
+    </p>
+    <div class="signature">
+      <div class="sig-box" aria-label="Signature of Affan">Affan (Father)</div>
+      <div class="sig-box" aria-label="Signature of Umar">Umar (Son)</div>
     </div>
-    <button onclick="goToPage(3)">➡️ Aage Badhte Hain</button>
-  </div>
-
-  <div class="page" id="page3">
-    <h2>💬 Hamari Choti Si Funny Talk </h2>
-    <div class="chat-box">
-      <div class="chat-msg ilma">ilma: hurr</div>
-      <div class="chat-msg ilma">affan: furr</div>
-      <div class="chat-msg affan">ilma: dhttt</div>
-      <div class="chat-msg ilma">affan: bhkkk</div>
-      <div class="chat-msg affan">ilma: sach me 😂</div>
-      <div class="chat-msg ilma">affan: nhi</div>
-      <div class="chat-msg affan">ilma: 😅</div>
+    <div class="footer" aria-hidden="true">
+      Dated this 27th day of April 2024 at [Your City], India.
     </div>
-    <button onclick="goToPage(4)">❤️ Agla Page Dekho</button>
-  </div>
-
-  <div class="page" id="page4">
-    <div class="hug">
-      <h2>🤗 A Big Virtual Hug</h2>
-      <p>Kabhi kabhi ek hug se sab kuch theek lagta hai. Agar paas hota, to zaroor gale lagta…bina puche</p>
-      <p>Lekin filhaal, yeh virtual hug tumhare liye 💞psnd aaye to rakh lena wrna ----?</p>
-    </div>
-    <button onclick="goToPage(5)">➡️ NEXT Surprise</button>
-  </div>
-
-  <div class="page" id="page5">
-    <div class="game">
-      <h2>🎮 Ek Choti Si Game</h2>
-      <p>Game ka naam: “Dil Ilma ke Naam”</p>
-      <p>Mission: Mujhe wapas impress karo! 😄</p>
-      <p>(Ye game interactive hone wala hai next phase mein)</p>
-    </div>
-    <button onclick="goToPage(6)">Next ➡️</button>
-  </div>
-
-  <div class="page" id="page6">
-    <div class="reflection">
-      <h2>🪞 Mirror Talk</h2>
-      <p>Ilma, jab bhi tum khud se baat karo, ek baar keh dena: “Main bohot special hoon.”</p>
-      <p>Tumhare hone se hi duniya sundar lagti hai 💗</p>
-    </div>
-    <button onclick="goToPage(7)">Aage ➡️</button>
-  </div>
-
-  <div class="page" id="page7">
-    <div class="music">
-      <h2>🎵 Music Vibes</h2>
-      <p>“Tera Mera Rishta Purana…”</p>
-      <p>(Socho agar yeh background mein baj raha hota, aur hum dono terrace pe patang uda rahe hote ☁️)</p>
-    </div>
-    <button onclick="goToPage(8)">➡️ Next</button>
-  </div>
-
-  <div class="page" id="page8">
-    <div class="poem">
-      <h2>📝 apke  Naam Ek Shayari Multani ji </h2>
-      <p> Har cheej jid karke,<br>
-      lene wala main…<br>
-      ek tumhen paane ke liye,<br>
-      sabr kar raha hun 💫</p>
-    </div>
-    <button onclick="goToPage(9)">➡️ Last Few</button>
-  </div>
-
-  <div class="page" id="page9">
-    <div class="rain">
-      <h2>🌧️ Barish Wali Yaadein</h2>
-      <p>Yaad hai jab barish ho rahi thi aur tum terrace pe thi?</p>
-      <p>Wo bhi ek scene hi tha… jaise koi movie, jisme heroine bas tum thi ☔</p>
-    </div>
-    <button onclick="goToPage(10)">➡️ Second Last</button>
-  </div>
-
-  <div class="page" id="page10">
-    <div class="final-note">
-      <h2>🕯️ Khamoshi Mein Bhi Pyaar Hai</h2>
-      <p>Kuch cheezein kehne se nahi, mehsoos karne se samajh aati hain.</p>
-      <p>Har lamha, har yaad, tumse judi hai…</p>
-    </div>
-    <button onclick="goToPage(11)">💭 Final Page</button>
-  </div>
-
-  <div class="page" id="page11">
-    <h2>🫶 Before You Go…</h2>
-    <div class="questions">
-      <p>1. Kiya tum theek ho Ilma?</p>
-      <p>2. Ghar me Ammi Papa theek hain?</p>
-      <p>3. Kiya Arsh tumhari ab bhi jasosi to nhi karta? 😄</p>
-    </div>
-  </div>
-
-  <script>
-    function goToPage(pageNum) {
-      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-      document.getElementById(`page${pageNum}`).classList.add('active');
-    }
-  </script>
+  </article>
 </body>
 </html>
+
